@@ -6,6 +6,7 @@ public static class IoC
     public static IServiceCollection AddDependency(this IServiceCollection services)
     {
         services.AddScoped<IClientServices, ClientServices>();
+        services.AddScoped<IInvoiceServices, InvoiceServices>();
 
         return services;
     }

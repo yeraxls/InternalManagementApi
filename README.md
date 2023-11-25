@@ -1,8 +1,20 @@
 This api is designed to manage customers and invoices.
 It is currently a small test, based on entityframework in memory to not need a database.
+Parts
 
-The next steps will be:
+
+Finished tasks
+- Finish the Clients part 
 - Finish the invoices part 
+
+
+Tasks in process
+
+
+
+
+
+Pending tasks
 - Finish Client detail, where you bring the invoices by IdClient
 - Login system with its table
 - Basic security of the application by login
