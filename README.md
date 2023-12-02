@@ -9,13 +9,13 @@ Finished tasks
 
 
 Tasks in process
+- Finish Client detail, where you bring the invoices by IdClient
 
 
 
 
 
 Pending tasks
-- Finish Client detail, where you bring the invoices by IdClient
 - Login system with its table
 - Basic security of the application by login
 - Docker this Api

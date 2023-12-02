@@ -65,6 +65,18 @@ public class InvoiceServices : IInvoiceServices
     {
         return await _baseRepository.Queryable<Invoice>(c => c.Id == id).FirstOrDefaultAsync();
     }
+
+    private async Task<List<Invoice>> GetInvoiceByClientForDB(int idClient)
+    {
+        return await _baseRepository.Queryable<Invoice>(c => c.Id == idClient).ToListAsync();
+    }
+
+
+    public async Task<List<InvoiceVM>> GetInvoiceByIdClient(int id)
+    {
+        var invoices = await GetInvoiceByClientForDB(id);
+        return invoices.Select(i => GenerateModelInvoice(i)).ToList();
+    }
 }
 
 public interface IInvoiceServices
@@ -73,4 +85,6 @@ public interface IInvoiceServices
     Task CreateInvoice(NewInvoiceVM invoice);
     Task UpdateInvoice(InvoiceVM invoice);
     Task DeleteInvoice(int id);
+
+    Task<List<InvoiceVM>> GetInvoiceByIdClient(int id);
 }

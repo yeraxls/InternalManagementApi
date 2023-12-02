@@ -69,4 +69,17 @@ public class InvoiceController : ControllerBase
             return BadRequest();
         }
     }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetInvoiceByIdClient(int id)
+    {
+        try
+        {
+            return Ok(await _invoiceServices.GetInvoiceByIdClient(id));
+        }
+        catch
+        {
+            return BadRequest(new List<Invoice>());
+        }
+    }
 }
